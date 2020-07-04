@@ -14,4 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/uuid', 'uuid@index');
+Route::get('/uuid', 'auth@uuid');
+
+Route::post('/register','auth@session');
