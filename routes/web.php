@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 Route::get('/uuid', 'auth@uuid');
 
-Route::post('/register','auth@session');
+Route::post('/register','auth@register');

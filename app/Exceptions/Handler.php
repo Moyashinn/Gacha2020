@@ -50,6 +50,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+      /*  if($this->isHttpException($e)){
+			if($e->getStatusCode() == 400){
+				return responce()->view('');
+			}
+		}*/
+		return parent::render($request, $exception);
     }
 }

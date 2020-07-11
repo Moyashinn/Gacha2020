@@ -13,7 +13,7 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('user', function(Blueprint $table){
+        Schema::create('users', function(Blueprint $table){
 			$table->bigIncrements('id');
 			$table->string('uuid',36);
 			$table->string('name',16);
@@ -27,6 +27,6 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::drop('user');
+        Schema::drop('users');
     }
 }
