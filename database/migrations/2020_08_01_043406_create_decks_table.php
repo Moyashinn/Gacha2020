@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class User extends Migration
+class CreateDecksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('users', function(Blueprint $table){
-			$table->bigIncrements('user_id');
-			$table->string('uuid',36);
-			$table->string('name',16);
-		});
+        Schema::create('decks', function (Blueprint $table) {
+            $table->foreignId('user_id');
+			$table->foreignId('card_id');
+			$table->unsignedInteger('count');
+        });
     }
 
     /**
@@ -27,6 +27,6 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::dropIfExists('decks');
     }
 }
